@@ -4,15 +4,18 @@ Three sample apps, each showing every Claude Code configuration piece in its rea
 
 ## Repo structure
 
+```text
 claude-code-applications/
 ├── README.md                  <- this file
 ├── CLAUDE.md                  <- repo-wide memory/instructions
 ├── springboot-app/
 ├── python-app/
 └── react-app/
+```
 
 Each app contains:
 
+```text
 <app>/
 ├── CLAUDE.md                  <- project memory (checked in)
 ├── CLAUDE.local.md            <- personal memory (gitignored)
@@ -24,6 +27,7 @@ Each app contains:
     ├── skills/<name>/SKILL.md <- Agent Skills
     ├── commands/<name>.md     <- custom slash commands
     └── agents/<name>.md       <- subagents (flat: subagents cannot call other subagents)
+```
 
 ## Concept cheat sheet
 
