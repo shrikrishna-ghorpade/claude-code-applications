@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(uv run pytest:*)",
+      "Bash(uv run ruff:*)",
+      "Bash(uv sync)",
+      "Bash(git status)",
+      "Bash(git diff:*)",
+      "Edit(app/**)",
+      "Edit(tests/**)"
+    ],
+    "ask": [
+      "Bash(uv add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Edit(pyproject.toml)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Edit(.venv/**)",
+      "Edit(uv.lock)",
+      "Bash(pip install:*)",
+      "Bash(rm -rf:*)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          { "type": "command", "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/block-dangerous-bash.sh" }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          { "type": "command", "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/ruff-format.sh", "timeout": 30 }
+        ]
+      }
+    ]
+  }
+}

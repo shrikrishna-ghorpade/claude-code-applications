@@ -1,0 +1,7 @@
+{
+  "name": "spring-boot-plugin",
+  "version": "1.0.0",
+  "description": "Spring Boot skill, /develop and /test commands, developer and tester subagents, and safety and pre-commit hooks.",
+  "author": { "name": "Krishna" },
+  "keywords": ["spring-boot", "java", "maven", "testing"]
+}

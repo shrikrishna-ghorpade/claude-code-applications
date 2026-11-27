@@ -1,0 +1,11 @@
+{
+  "name": "claude-code-applications",
+  "owner": { "name": "Krishna" },
+  "plugins": [
+    {
+      "name": "spring-boot-plugin",
+      "source": "./plugins/spring-boot-plugin",
+      "description": "Spring Boot Claude Code toolkit"
+    }
+  ]
+}
